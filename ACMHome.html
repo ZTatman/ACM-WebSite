@@ -1,0 +1,87 @@
+<!DOCTYPE>
+<!DOCTYPE html lang="en">
+<html>
+<head>
+	<title>Home</title>
+	<link id="fav" rel="icon" sizes="32x32" type="image/png" href="acm_fav_2.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<link rel="StyleSheet" href="StyleSheet.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- font-family -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</script>
+</head>
+<body>
+	<!-- Note: <nav> tag makes no difference, semantically the same. -->
+	<!-- However, It is just specificies that anything in the <nav> tag is 
+		 specifically related to and located in the navigation bar.-->
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Blog</a></li>
+			<li style="float: right"><a href="#">Sign in</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>	
+
+	<div class="hero-img">
+		<div class="hero-txt">
+			<h1>acm @ ucf</h1>
+			<p>Association of Computer Machinery</p>
+			<button>Join the Fun</button>
+		</div>
+	</div>
+
+
+	<div class="countdown-img">
+		<div class="countdown">
+			<h1>Next Meeting</h1>
+			<p id="demo" style="font-size: 30px"></p>	
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script>
+
+		// New countdown date, set the date
+		var meeting = new Date("Mar 18, 2019 00:00:00").getTime();
+
+		// Update the count every 1 second
+		var update = setInterval(function() {
+
+			// Get today's date & time.
+			var today = new Date().getTime();
+
+			// Find the distance between today and the new date.
+			var distance = meeting - today;
+
+			// Calculate units of time for days, hours, mins, seconds.
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var sec = Math.floor((distance % (1000 * 60)) / (1000));
+
+			// Display the result in the element with id=""
+			document.getElementById("demo").innerHTML = days + "d " + hours + "h " + mins + "m "
+			 + sec + "s ";
+
+			// If the countdown is done, write text
+			if (distance < 0) {
+				clearInterval(update);
+				document.getElementById("demo").innerHTML = "Meeting Today!";
+			} 
+		}, 1000);
+
+
+	</script>
+
+
+
+</body>
+</html>
