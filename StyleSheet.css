@@ -119,9 +119,9 @@ body {
 
 .hero-txt button {
 	position: relative;
-	top: 40px;
-	outline: none;
+	top: 10px;
 	display: inline-block;
+	outline: none;
 	border: 2px solid white;
 	border-radius: 2px;
 	padding: 15px 70px;
