@@ -1,5 +1,5 @@
-<!DOCTYPE>
-<!DOCTYPE html lang="en">
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Home</title>
@@ -12,35 +12,42 @@
 	<meta http-equiv="X-UA-Compatible" content="ie-edge">
 
 	<!-- StyleSheets -->
-	<link rel="StyleSheet" href="StyleSheet.css">
+	<link rel="StyleSheet" href="StyleSheet_ACM_Home.css">
+	
 	<!-- font-family -->
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Play" rel="stylesheet">
 
 	<!-- Bootstrap JS link -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome 5 Icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	</script>
 </head>
 <body>
 
 	<!-- Navigation bar -->
-	<nav>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Blog</a></li>
-			<li style="float: right"><a href="#">Sign in</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	</nav>
+	<div class="nav">
+
+		<!-- Nav Bar elements -->
+		<a class="active" href="ACMHome.html" target="_self"><i class="fas fa-home"></i>Home</a>
+		<a href="#"><i class="fas fa-users"></i>About</a>
+		<a href="#"><i class="fas fa-code"></i>Projects</a>
+		<a href="contact.html" target="_self"><i class="far fa-paper-plane"></i>Contact</a>
+
+		<!-- NavBar Icons -->
+		<a id="nav-icon" href="https://discord.gg/gHnXAh5" target="_blank"><i class="fab fa-discord"></i></a>
+		<a id="nav-icon" href="https://www.facebook.com/groups/ACMatUCF/" target="_blank"><i class="fab fa-facebook"></i></a>
+		<a id="nav-icon" href="https://acmatucf.slack.com/" target="_blank"><i class="fab fa-slack"></i></a>
+
+	</div>
 
 	<!-- Hero Image & text -->
 	<div class="hero-img">
 		<div class="hero-txt">
 			<h1>acm</h1>
-			<p>Association of Computer Machinery</p>
-			<button>Join the Fun</button>
+			<p>Association of Computing Machinery</p>
+			<button><a href="https://discord.gg/gHnXAh5" target="_blank">Join our Discord</a></button>
 		</div>
 	</div>
 
@@ -48,14 +55,18 @@
 	<div class="countdown-img">
 		<div class="countdown">
 			<h1>Next Meeting</h1>
-			<p id="demo" style="font-size: 30px"></p>
+			<p id="demo"></p>
+
+			<span id ="where-content-time">Thursday, 7:00 - 8:00 pm</span>	
+			<span id="where-content-bldg">Nicholson School of Communication</span>
+			<span id ="where-content-rm">room 107</span>		
 		</div>
 	</div>
 
 	<!-- Countdown Timer JavaScript -->
 	<script>
 		// New countdown date, set the date
-		var meeting = new Date("Mar 18, 2019 00:00:00").getTime();
+		var meeting = new Date("Apr 4, 2019 00:00:00").getTime();
 
 		// Update the count every 1 second
 		var update = setInterval(function() {
@@ -73,7 +84,9 @@
 			var sec = Math.floor((distance % (1000 * 60)) / (1000));
 
 			// Display the result in the element with id=""
-			document.getElementById("demo").innerHTML = days + "d " + hours + "h " + mins + "m "
+			document.getElementById("demo").innerHTML = days + "d " 
+			 + hours + "h "
+			 + mins + "m "
 			 + sec + "s ";
 
 			// If the countdown is done, write text
@@ -81,7 +94,6 @@
 				clearInterval(update);
 				document.getElementById("demo").innerHTML = "Meeting Today!";
 			}
-		}, 1000);
-	</script>
+		}, 1000);</script>
 </body>
 </html>
