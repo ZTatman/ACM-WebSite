@@ -1,0 +1,83 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: 'Play', sans-serif;
+
+}
+
+body {
+	width: 100%;
+	height: 500vh;
+
+	background-position: center;
+	background-color: #333;  /* real bckgrnd color: #333 */
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: table;
+}
+
+
+
+.nav a {
+	float: left;
+}
+
+
+/* Navbar links */
+ .nav a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+
+.nav a i {
+
+	padding: 0;
+	margin-right: 10px;
+}
+
+/* Navbar Discord icon*/
+#nav-icon {
+	float: right;
+}
+
+#nav-icon {
+	color: white;
+}
+
+#nav-icon:hover {
+	color: #f1c40f;
+	background-color: #333;
+ 	transition: all 250ms ease-in-out;
+	transform: scale(1.5);
+}
+
+
+
+/*Hover over a nav link (black)*/
+ .nav a:hover {
+	background-color: #111;
+	text-decoration: none;
+	color: white;
+
+	/*transition time*/
+	transition: 250ms;
+}
+
+/*Currently on the page of nav link (yellow)*/
+ .active {
+	background-color: #111;
+	color: white;
+}
+
+
+/* Navbar Mobile*/
+@media screen and (max-width: 500px) {
+  .nav a {
+    float: none;
+    display: block;
+  }
+}
